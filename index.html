@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#000000" />
+  <title>Tanishq — Industrial Engineering · Project Management & Operations</title>
+  <meta name="description" content="Portfolio of Tanishq Tanishq — B.Eng. Industrial Engineering student at THD, focused on project management, operations research, and cross-functional delivery." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+  <!-- SVG icon sprite -->
+  <svg class="sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+    <defs>
+      <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88"/></symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M2 13h20"/></symbol>
+      <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10v6"/><path d="M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+      <symbol id="i-bars" viewBox="0 0 24 24"><line x1="6" y1="20" x2="6" y2="14"/><line x1="12" y1="20" x2="12" y2="8"/><line x1="18" y1="20" x2="18" y2="4"/></symbol>
+      <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a4.7 4.7 0 0 0-6.4 6.4L2 19l3 3 6.3-6.3a4.7 4.7 0 0 0 6.4-6.4L15 13l-4-4z"/></symbol>
+      <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14A5 5 0 0 0 17 10a5 5 0 1 0-10 0 5 5 0 0 0 1.91 4"/></symbol>
+      <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+      <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .4 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.4 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.9.4l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .4-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.4-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.4H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.4l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.4 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></symbol>
+      <symbol id="i-calc" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><circle cx="8" cy="11" r="0.5"/><circle cx="12" cy="11" r="0.5"/><circle cx="16" cy="11" r="0.5"/><circle cx="8" cy="15" r="0.5"/><circle cx="12" cy="15" r="0.5"/><circle cx="16" cy="15" r="0.5"/><circle cx="8" cy="19" r="0.5"/><circle cx="12" cy="19" r="0.5"/><circle cx="16" cy="19" r="0.5"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+      <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="8" y="3" width="8" height="4" rx="1"/><path d="M16 5h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2"/><path d="m9 13 2 2 4-4"/></symbol>
+      <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10"/><path d="M20.49 15a9 9 0 0 1-14.85 3.36L1 14"/></symbol>
+      <symbol id="i-euro" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M7 10h8"/><path d="M7 14h8"/><path d="M15 6.5a5.5 5.5 0 0 0-7 5.5c0 3.3 2.7 5.5 5.5 5.5"/></symbol>
+      <symbol id="i-trend" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></symbol>
+      <symbol id="i-factory" viewBox="0 0 24 24"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/><line x1="7" y1="18" x2="7.01" y2="18"/><line x1="12" y1="18" x2="12.01" y2="18"/><line x1="17" y1="18" x2="17.01" y2="18"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3 L13.8 10.2 L21 12 L13.8 13.8 L12 21 L10.2 13.8 L3 12 L10.2 10.2 Z"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="8 12.5 11 15.5 16.5 10"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+      <symbol id="i-edit" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></symbol>
+      <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="6.34" y2="17.66"/><line x1="17.66" y1="6.34" x2="19.07" y2="4.93"/></symbol>
+      <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
+      <symbol id="i-arrow-ur" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></symbol>
+      <symbol id="i-brain" viewBox="0 0 24 24"><path d="M9 3a3 3 0 0 0-3 3v1a3 3 0 0 0-3 3 3 3 0 0 0 1.5 2.6A3 3 0 0 0 6 16a3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3z"/><path d="M15 3a3 3 0 0 1 3 3v1a3 3 0 0 1 3 3 3 3 0 0 1-1.5 2.6A3 3 0 0 1 18 16a3 3 0 0 1-3 3 3 3 0 0 1-3-3V6a3 3 0 0 1 3-3z"/></symbol>
+      <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 2v6l-5 9a2 2 0 0 0 1.8 3h12.4a2 2 0 0 0 1.8-3l-5-9V2"/><line x1="8" y1="2" x2="16" y2="2"/><line x1="7.5" y1="13" x2="16.5" y2="13"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
+      <symbol id="i-handshake" viewBox="0 0 24 24"><path d="M11 17 13 19a1 1 0 0 0 1.4-1.4"/><path d="m14 14 2.5 2.5a1 1 0 0 0 1.4-1.4l-3.9-3.9a3 3 0 0 0-4.2 0l-.9.9a1 1 0 1 1-1.4-1.4L10.3 7.9a5.8 5.8 0 0 1 7-.9l.5.3a2 2 0 0 0 1.4.2L21 6"/><path d="M21 3l1 11-3 0"/><path d="M3 3l-1 11 3 0"/><path d="M11 17l-3-3"/></symbol>
+      <symbol id="i-arrow-r" viewBox="0 0 24 24"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- Ambient animated background -->
+  <div class="ambient" aria-hidden="true">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+  </div>
+
+  <!-- Nav -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="#top" aria-label="Tanishq — Home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M4 18l8-14 8 14H4zm3.5-2h9L12 8.2 7.5 16z"/></svg>
+        </span>
+        <span>Tanishq</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#work" data-i18n="nav.work">Experience</a>
+        <a href="#education" data-i18n="nav.edu">Education</a>
+        <a href="#projects" data-i18n="nav.proj">Projects</a>
+        <a href="#skills" data-i18n="nav.skills">Skills</a>
+        <a href="#journey" data-i18n="nav.journey">Journey</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" class="lang-btn is-active" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" class="lang-btn" data-lang="de" aria-pressed="false">DE</button>
+          <span class="lang-pill" aria-hidden="true"></span>
+        </div>
+        <a class="nav-cta magnetic" href="mailto:tanishq114@gmail.com">
+          <span class="dot-live" aria-hidden="true"></span>
+          <span data-i18n="nav.cta">Hire me</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Progress bar -->
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <main id="top">
+
+    <!-- Hero -->
+    <section class="hero" aria-label="Intro">
+      <div class="hero-bg" aria-hidden="true">
+        <canvas class="gl-canvas" id="gl"></canvas>
+        <div class="grid-bg"></div>
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+      </div>
+      <div class="container hero-inner">
+        <p class="eyebrow reveal">
+          <span class="pulse" aria-hidden="true"></span>
+          <span data-i18n="hero.eyebrow">Portfolio · 2026 · Available for Pflichtpraktikum</span>
+        </p>
+        <h1 class="hero-title reveal" data-split>
+          <span class="line">
+            <span class="word" data-i18n="hero.t1">Engineering clarity</span>
+          </span>
+          <span class="line gradient" data-i18n="hero.t2">from plan to production.</span>
+        </h1>
+        <p class="hero-sub reveal" data-i18n="hero.sub">
+          Industrial engineering student at THD — European Campus Rottal-Inn.
+          I turn ambiguous briefs into milestone plans, dashboards, and delivered outcomes.
+        </p>
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary magnetic" href="#work">
+            <span data-i18n="hero.btn1">See my work</span>
+            <svg class="ico ico-sm" aria-hidden="true"><use href="#i-arrow-r"/></svg>
+          </a>
+          <a class="btn btn-ghost magnetic" href="#contact">
+            <span data-i18n="hero.btn2">Contact</span>
+            <svg class="ico ico-sm" aria-hidden="true"><use href="#i-arrow-ur"/></svg>
+          </a>
+        </div>
+
+        <div class="hero-icon-row reveal" aria-hidden="true">
+          <span class="iconchip" data-tilt><svg class="ico" aria-hidden="true"><use href="#i-bars"/></svg></span>
+          <span class="iconchip" data-tilt><svg class="ico" aria-hidden="true"><use href="#i-brain"/></svg></span>
+          <span class="iconchip" data-tilt><svg class="ico" aria-hidden="true"><use href="#i-gear"/></svg></span>
+          <span class="iconchip" data-tilt><svg class="ico" aria-hidden="true"><use href="#i-trend"/></svg></span>
+          <span class="iconchip" data-tilt><svg class="ico" aria-hidden="true"><use href="#i-compass"/></svg></span>
+          <span class="iconchip" data-tilt><svg class="ico" aria-hidden="true"><use href="#i-wrench"/></svg></span>
+          <span class="iconchip" data-tilt><svg class="ico" aria-hidden="true"><use href="#i-target"/></svg></span>
+        </div>
+
+        <div class="hero-meta reveal">
+          <div><span class="k" data-i18n="hero.m1k">Focus</span><span class="v" data-i18n="hero.m1v">Project Management · Operations</span></div>
+          <div><span class="k" data-i18n="hero.m2k">Location</span><span class="v" data-i18n="hero.m2v">München, DE</span></div>
+          <div><span class="k" data-i18n="hero.m3k">Availability</span><span class="v" data-i18n="hero.m3v">Pflichtpraktikum · WS 2026/27</span></div>
+        </div>
+      </div>
+      <button class="scroll-hint" aria-label="Scroll to next section" onclick="document.getElementById('marquee').scrollIntoView({behavior:'smooth'})">
+        <span></span>
+      </button>
+    </section>
+
+    <!-- Marquee keywords -->
+    <section class="marquee" id="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Projektmanagement</span><span class="sep">—</span>
+        <span>Operations Research</span><span class="sep">—</span>
+        <span>Supply Chain</span><span class="sep">—</span>
+        <span>Lean · KVP</span><span class="sep">—</span>
+        <span>Risk Analysis</span><span class="sep">—</span>
+        <span>Business Cases</span><span class="sep">—</span>
+        <span>KPI Analytics</span><span class="sep">—</span>
+        <span>Excel · Python</span><span class="sep">—</span>
+        <span>Cross-functional</span><span class="sep">—</span>
+        <span>Projektmanagement</span><span class="sep">—</span>
+        <span>Operations Research</span><span class="sep">—</span>
+        <span>Supply Chain</span><span class="sep">—</span>
+        <span>Lean · KVP</span><span class="sep">—</span>
+        <span>Risk Analysis</span><span class="sep">—</span>
+        <span>Business Cases</span><span class="sep">—</span>
+        <span>KPI Analytics</span><span class="sep">—</span>
+        <span>Excel · Python</span><span class="sep">—</span>
+        <span>Cross-functional</span><span class="sep">—</span>
+      </div>
+    </section>
+
+    <!-- About / stats -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">
+            <span class="ico-badge"><svg class="ico" aria-hidden="true"><use href="#i-compass"/></svg></span>
+            <span data-i18n="about.eyebrow">About</span>
+          </p>
+          <h2><span data-i18n="about.t1">A structured mind</span><br/><span data-i18n="about.t2">with a builder's patience.</span></h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-lead reveal">
+            <p data-i18n="about.p1">
+              I'm in my 6th semester of Industrial Engineering, specialising in
+              project management and operations. My work sits where spreadsheets
+              meet shop floors — milestone plans, risk logs, and scenario analyses
+              that help teams ship on time, on scope, and on budget.
+            </p>
+            <p data-i18n="about.p2">
+              I write in English and German, document like it's shipping code,
+              and care about the details that make a project land.
+            </p>
+            <div class="signature">
+              <svg width="140" height="60" viewBox="0 0 140 60" aria-hidden="true">
+                <path class="sig-path" d="M4 38 C 20 10, 40 10, 55 38 S 95 66, 110 30 C 118 12, 128 22, 136 38" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+              <span>Tanishq</span>
+            </div>
+          </div>
+          <div class="stats">
+            <div class="stat reveal">
+              <div class="stat-ico"><svg class="ico" aria-hidden="true"><use href="#i-cap"/></svg></div>
+              <div class="stat-n" data-count="6" data-suffix="th">6<sup>th</sup></div>
+              <div class="stat-l" data-i18n="about.s1">Semester · B.Eng.</div>
+            </div>
+            <div class="stat reveal">
+              <div class="stat-ico"><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg></div>
+              <div class="stat-n" data-count="200" data-suffix="+">200<sup>+</sup></div>
+              <div class="stat-l" data-i18n="about.s2">Daily guests coordinated</div>
+            </div>
+            <div class="stat reveal">
+              <div class="stat-ico"><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg></div>
+              <div class="stat-n" data-count="3">3</div>
+              <div class="stat-l" data-i18n="about.s3">Languages · DE · EN · HI</div>
+            </div>
+            <div class="stat reveal">
+              <div class="stat-ico"><svg class="ico" aria-hidden="true"><use href="#i-book"/></svg></div>
+              <div class="stat-n">C1</div>
+              <div class="stat-l" data-i18n="about.s4">English study language</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section class="work" id="work">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">
+            <span class="ico-badge"><svg class="ico" aria-hidden="true"><use href="#i-briefcase"/></svg></span>
+            <span data-i18n="work.eyebrow">Experience</span>
+          </p>
+          <h2><span data-i18n="work.t1">Delivered in the real world,</span><br/><span data-i18n="work.t2">not just on paper.</span></h2>
+        </div>
+
+        <article class="case reveal">
+          <div class="case-meta">
+            <span class="tag">
+              <span class="tag-dot" aria-hidden="true"></span>
+              <span data-i18n="work.role">Werkstudent</span>
+            </span>
+            <span class="date">06 / 2024 — 07 / 2025</span>
+            <div class="case-logo" aria-hidden="true">
+              <svg viewBox="0 0 48 48" width="44" height="44"><path fill="currentColor" d="M24 4L4 16l4 2v14l16 10 16-10V18l4-2L24 4zm0 4.6L37.7 16 24 23.4 10.3 16 24 8.6zM10 20.3l13 7v12.2l-13-8.1V20.3zm15 7l13-7v11.1l-13 8.1V27.3z"/></svg>
+            </div>
+          </div>
+          <div class="case-body">
+            <h3 data-i18n="work.h3">Küchenhilfe · Betriebs- und Service GmbH</h3>
+            <p class="case-loc">Unterföhring, München</p>
+            <p class="case-kicker" data-i18n="work.kicker">
+              A fast, multicultural team of six keeping daily operations running
+              for 200+ guests — the closest thing to cross-functional project
+              work you'll find outside an office.
+            </p>
+            <ul class="case-points">
+              <li>
+                <span class="pt-ico"><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg></span>
+                <span data-i18n="work.p1"><strong>Cross-functional coordination</strong> across kitchen, service, and disposition to keep daily operations on track.</span>
+              </li>
+              <li>
+                <span class="pt-ico"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg></span>
+                <span data-i18n="work.p2"><strong>Planning under pressure</strong> — prioritised tasks, escalated bottlenecks, kept throughput steady.</span>
+              </li>
+              <li>
+                <span class="pt-ico"><svg class="ico" aria-hidden="true"><use href="#i-edit"/></svg></span>
+                <span data-i18n="work.p3"><strong>Documentation discipline</strong> — maintained inventory and handover logs for clean shift transitions.</span>
+              </li>
+              <li>
+                <span class="pt-ico"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg></span>
+                <span data-i18n="work.p4"><strong>Quality &amp; process</strong> — reliable adherence to internal standards in a multicultural team.</span>
+              </li>
+            </ul>
+            <div class="case-stats">
+              <div><strong>200+</strong><span data-i18n="work.cs1">guests / day</span></div>
+              <div><strong>6</strong><span data-i18n="work.cs2">team members</span></div>
+              <div><strong>13</strong><span data-i18n="work.cs3">months on the job</span></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="edu" id="education">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">
+            <span class="ico-badge"><svg class="ico" aria-hidden="true"><use href="#i-cap"/></svg></span>
+            <span data-i18n="edu.eyebrow">Education</span>
+          </p>
+          <h2><span data-i18n="edu.t1">Foundations built</span><br/><span data-i18n="edu.t2">module by module.</span></h2>
+        </div>
+
+        <div class="edu-head reveal">
+          <div>
+            <h3 data-i18n="edu.degree">B.Eng. Wirtschaftsingenieurwesen</h3>
+            <p class="edu-school" data-i18n="edu.school">Technische Hochschule Deggendorf — European Campus Rottal-Inn, Pfarrkirchen</p>
+          </div>
+          <div class="edu-dates" data-i18n="edu.dates">10 / 2023 — exp. 03 / 2027</div>
+        </div>
+
+        <div class="modules">
+          <article class="module reveal">
+            <div class="mod-ico"><svg class="ico" aria-hidden="true"><use href="#i-clipboard"/></svg></div>
+            <div class="mod-code">IE-05 · IE-32</div>
+            <h4 data-i18n="edu.m1t">Project Management</h4>
+            <p data-i18n="edu.m1p">Agile and classical project management, milestone planning, risk analysis, documentation, English-language presentations — on real team projects.</p>
+          </article>
+          <article class="module reveal">
+            <div class="mod-ico"><svg class="ico" aria-hidden="true"><use href="#i-link"/></svg></div>
+            <div class="mod-code">IE-21</div>
+            <h4 data-i18n="edu.m2t">Operations Research &amp; Logistics</h4>
+            <p data-i18n="edu.m2p">Cross-functional process control, supply chain management, linear optimisation, decision support with Excel-Solver.</p>
+          </article>
+          <article class="module reveal">
+            <div class="mod-ico"><svg class="ico" aria-hidden="true"><use href="#i-refresh"/></svg></div>
+            <div class="mod-code" data-i18n="edu.m3c">6. Sem · laufend</div>
+            <h4 data-i18n="edu.m3t">Lean Management</h4>
+            <p data-i18n="edu.m3p">Waste analysis, continuous improvement (KVP), process visualisation — the foundation for production and development project work.</p>
+          </article>
+          <article class="module reveal">
+            <div class="mod-ico"><svg class="ico" aria-hidden="true"><use href="#i-euro"/></svg></div>
+            <div class="mod-code">IE-06 · IE-20</div>
+            <h4 data-i18n="edu.m4t">Accounting &amp; Financing</h4>
+            <p data-i18n="edu.m4p">Investment calculation, cost analysis, business cases — the finance lens on cross-functional projects.</p>
+          </article>
+          <article class="module reveal">
+            <div class="mod-ico"><svg class="ico" aria-hidden="true"><use href="#i-bars"/></svg></div>
+            <div class="mod-code">IE-14</div>
+            <h4 data-i18n="edu.m5t">Applied Mathematics</h4>
+            <p data-i18n="edu.m5p">Statistical data analysis, KPI evaluation, regression and correlation analysis in MS Excel.</p>
+          </article>
+          <article class="module module-wide reveal">
+            <div class="mod-ico"><svg class="ico" aria-hidden="true"><use href="#i-factory"/></svg></div>
+            <div class="mod-code" data-i18n="edu.m6c">Ongoing</div>
+            <h4 data-i18n="edu.m6t">Production &amp; Development Projects</h4>
+            <p data-i18n="edu.m6p">Cross-module teamwork blending lean, operations, and project management into real production &amp; product-development scenarios.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects" id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">
+            <span class="ico-badge"><svg class="ico" aria-hidden="true"><use href="#i-trend"/></svg></span>
+            <span data-i18n="proj.eyebrow">Selected Projects</span>
+          </p>
+          <h2><span data-i18n="proj.t1">The numbers</span><br/><span data-i18n="proj.t2">behind the decisions.</span></h2>
+        </div>
+
+        <article class="project reveal">
+          <div class="project-visual" aria-hidden="true">
+            <div class="chart">
+              <div class="bar" style="--h:38%"><span class="bar-v">38%</span></div>
+              <div class="bar" style="--h:55%"><span class="bar-v">55%</span></div>
+              <div class="bar" style="--h:70%"><span class="bar-v">70%</span></div>
+              <div class="bar" style="--h:82%"><span class="bar-v">82%</span></div>
+              <div class="bar" style="--h:90%"><span class="bar-v">90%</span></div>
+              <div class="bar" style="--h:96%"><span class="bar-v">96%</span></div>
+              <div class="chart-line" aria-hidden="true"></div>
+              <svg class="chart-curve" viewBox="0 0 100 40" preserveAspectRatio="none">
+                <path d="M0,30 C20,20 35,12 50,14 S85,6 100,4" fill="none" stroke="url(#g1)" stroke-width="0.8" stroke-linecap="round"/>
+                <defs>
+                  <linearGradient id="g1" x1="0" x2="1">
+                    <stop offset="0" stop-color="#fff" stop-opacity=".9"/>
+                    <stop offset="1" stop-color="#2997ff"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div class="sun-art" aria-hidden="true">
+              <svg viewBox="0 0 80 80">
+                <circle cx="40" cy="40" r="12" />
+                <g class="rays">
+                  <line x1="40" y1="10" x2="40" y2="20"/>
+                  <line x1="40" y1="60" x2="40" y2="70"/>
+                  <line x1="10" y1="40" x2="20" y2="40"/>
+                  <line x1="60" y1="40" x2="70" y2="40"/>
+                  <line x1="19" y1="19" x2="26" y2="26"/>
+                  <line x1="54" y1="54" x2="61" y2="61"/>
+                  <line x1="19" y1="61" x2="26" y2="54"/>
+                  <line x1="54" y1="26" x2="61" y2="19"/>
+                </g>
+              </svg>
+            </div>
+            <div class="project-badge">
+              <svg class="ico ico-sm" aria-hidden="true"><use href="#i-sun"/></svg>
+              <span data-i18n="proj.badge">Break-even · ROI · Amortisation</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <p class="eyebrow small" data-i18n="proj.sub">Scientific Writing &amp; Project Management · 2024</p>
+            <h3 data-i18n="proj.title">Wirtschaftlichkeitsanalyse PV-Anlage Pfarrkirchen</h3>
+            <p data-i18n="proj.desc">
+              A team economic feasibility study for a photovoltaic installation:
+              structured milestone plan, clear task split, progress tracking, and
+              risk register — paired with Excel-based scenario analyses for
+              amortisation, ROI, and break-even points.
+            </p>
+            <ul class="chips">
+              <li><span class="chip-dot"></span><span data-i18n="proj.c1">Milestone planning</span></li>
+              <li><span class="chip-dot"></span><span data-i18n="proj.c2">Scenario analysis</span></li>
+              <li><span class="chip-dot"></span><span data-i18n="proj.c3">Excel modelling</span></li>
+              <li><span class="chip-dot"></span><span data-i18n="proj.c4">Risk analysis</span></li>
+              <li><span class="chip-dot"></span><span data-i18n="proj.c5">Technical report · EN</span></li>
+              <li><span class="chip-dot"></span><span data-i18n="proj.c6">Team delivery</span></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="skills" id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">
+            <span class="ico-badge"><svg class="ico" aria-hidden="true"><use href="#i-wrench"/></svg></span>
+            <span data-i18n="skills.eyebrow">Skills &amp; Toolkit</span>
+          </p>
+          <h2><span data-i18n="skills.t1">Tools and methods</span><br/><span data-i18n="skills.t2">I reach for every week.</span></h2>
+        </div>
+
+        <div class="skill-grid">
+          <div class="skill-card reveal">
+            <div class="skill-head">
+              <div class="skill-icon" style="--c1:#2997ff;--c2:#8a5cf6"><svg class="ico" aria-hidden="true"><use href="#i-target"/></svg></div>
+              <h4 data-i18n="skills.g1t">Project Management</h4>
+            </div>
+            <ul>
+              <li data-i18n="skills.g1_1">Agile &amp; classical PM</li>
+              <li data-i18n="skills.g1_2">Milestone planning</li>
+              <li data-i18n="skills.g1_3">Risk analysis</li>
+              <li data-i18n="skills.g1_4">Progress tracking</li>
+              <li data-i18n="skills.g1_5">Project documentation</li>
+              <li data-i18n="skills.g1_6">Top-management presentations</li>
+              <li data-i18n="skills.g1_7">Cross-functional collaboration</li>
+            </ul>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-head">
+              <div class="skill-icon" style="--c1:#8a5cf6;--c2:#f472b6"><svg class="ico" aria-hidden="true"><use href="#i-gear"/></svg></div>
+              <h4 data-i18n="skills.g2t">Operations</h4>
+            </div>
+            <ul>
+              <li data-i18n="skills.g2_1">Operations Research</li>
+              <li data-i18n="skills.g2_2">Supply Chain Management</li>
+              <li data-i18n="skills.g2_3">Production control (Produktionssteuerung)</li>
+              <li data-i18n="skills.g2_4">Process optimisation</li>
+              <li data-i18n="skills.g2_5">Lean Management</li>
+              <li data-i18n="skills.g2_6">Continuous improvement · KVP</li>
+              <li data-i18n="skills.g2_7">Decision support</li>
+              <li data-i18n="skills.g2_8">Linear optimisation</li>
+            </ul>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-head">
+              <div class="skill-icon" style="--c1:#34c759;--c2:#2997ff"><svg class="ico" aria-hidden="true"><use href="#i-trend"/></svg></div>
+              <h4 data-i18n="skills.g3t">Analytics &amp; Finance</h4>
+            </div>
+            <ul>
+              <li data-i18n="skills.g3_1">KPI evaluation &amp; dashboards</li>
+              <li data-i18n="skills.g3_2">Statistical data analysis</li>
+              <li data-i18n="skills.g3_3">Regression &amp; correlation</li>
+              <li data-i18n="skills.g3_4">Investment calculation</li>
+              <li data-i18n="skills.g3_5">Cost analysis</li>
+              <li data-i18n="skills.g3_6">Business cases</li>
+              <li data-i18n="skills.g3_7">Scenario analysis — ROI · Break-even · Amortisation</li>
+            </ul>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-head">
+              <div class="skill-icon" style="--c1:#ff9f0a;--c2:#ff375f"><svg class="ico" aria-hidden="true"><use href="#i-calc"/></svg></div>
+              <h4 data-i18n="skills.g4t">IT &amp; Tools</h4>
+            </div>
+            <ul class="tools">
+              <li><span class="tool-dot" style="background:#217346"></span>Excel <em data-i18n="skills.g4_1">· advanced, Solver</em></li>
+              <li><span class="tool-dot" style="background:#d04423"></span>PowerPoint</li>
+              <li><span class="tool-dot" style="background:#2b579a"></span>Word</li>
+              <li><span class="tool-dot" style="background:#6264a7"></span>Teams · Microsoft 365</li>
+              <li><span class="tool-dot" style="background:#3776ab"></span>Python <em>· NumPy, Matplotlib</em></li>
+              <li><span class="tool-dot" style="background:#a1a1a6"></span>MS Office Suite</li>
+            </ul>
+          </div>
+
+          <div class="skill-card skill-wide reveal">
+            <div class="skill-head">
+              <div class="skill-icon" style="--c1:#5ac8fa;--c2:#2997ff"><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg></div>
+              <h4 data-i18n="skills.g5t">Languages</h4>
+            </div>
+            <ul class="lang">
+              <li>
+                <span class="lcode" aria-hidden="true">DE</span>
+                <span data-i18n="skills.g5_de">Deutsch</span>
+                <span class="bar-wrap" aria-label="B2"><span class="bar-fill" style="--w:70%"></span></span>
+                <em>B2</em>
+              </li>
+              <li>
+                <span class="lcode" aria-hidden="true">EN</span>
+                <span data-i18n="skills.g5_en">English</span>
+                <span class="bar-wrap" aria-label="C1"><span class="bar-fill" style="--w:92%"></span></span>
+                <em data-i18n="skills.g5_en_tag">C1 · Studiensprache</em>
+              </li>
+              <li>
+                <span class="lcode" aria-hidden="true">HI</span>
+                <span data-i18n="skills.g5_hi">Hindi</span>
+                <span class="bar-wrap" aria-label="Native"><span class="bar-fill" style="--w:100%"></span></span>
+                <em data-i18n="skills.g5_hi_tag">Muttersprache</em>
+              </li>
+            </ul>
+          </div>
+
+          <div class="skill-card skill-wide reveal">
+            <div class="skill-head">
+              <div class="skill-icon" style="--c1:#ff375f;--c2:#ff9f0a"><svg class="ico" aria-hidden="true"><use href="#i-bulb"/></svg></div>
+              <h4 data-i18n="skills.g6t">Working Style</h4>
+            </div>
+            <div class="softlist">
+              <span data-i18n="skills.g6_1">Structured</span>
+              <span data-i18n="skills.g6_2">Outcome-driven</span>
+              <span data-i18n="skills.g6_3">Documentation-first</span>
+              <span data-i18n="skills.g6_4">Team player</span>
+              <span data-i18n="skills.g6_5">Reliable under pressure</span>
+              <span data-i18n="skills.g6_6">Multicultural</span>
+              <span data-i18n="skills.g6_7">Self-starter</span>
+              <span data-i18n="skills.g6_8">Continuous improvement</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3D CSS rotating skills sphere -->
+        <div class="cloud-wrap reveal" aria-hidden="true">
+          <div class="cloud-stage">
+            <div class="cloud" id="cloud"></div>
+          </div>
+          <p class="cloud-caption" data-i18n="cloud.caption">Hover · drag · every keyword orbits.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Journey / Timeline -->
+    <section class="journey" id="journey">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">
+            <span class="ico-badge"><svg class="ico" aria-hidden="true"><use href="#i-route"/></svg></span>
+            <span data-i18n="jny.eyebrow">Journey</span>
+          </p>
+          <h2><span data-i18n="jny.t1">A short timeline</span><br/><span data-i18n="jny.t2">of how I got here.</span></h2>
+        </div>
+
+        <ol class="timeline">
+          <li class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-date">10 / 2023</div>
+            <div class="tl-card">
+              <span class="tl-ico"><svg class="ico" aria-hidden="true"><use href="#i-cap"/></svg></span>
+              <h4 data-i18n="jny.1t">Started B.Eng. Wirtschaftsingenieurwesen</h4>
+              <p data-i18n="jny.1p">Enrolled at THD — European Campus Rottal-Inn, Pfarrkirchen. Study language: English.</p>
+            </div>
+          </li>
+          <li class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-date">2024</div>
+            <div class="tl-card">
+              <span class="tl-ico"><svg class="ico" aria-hidden="true"><use href="#i-sun"/></svg></span>
+              <h4 data-i18n="jny.2t">PV-Anlage Pfarrkirchen — economic analysis</h4>
+              <p data-i18n="jny.2p">Team project on photovoltaic feasibility: milestone plan, risk analysis, ROI &amp; break-even in Excel.</p>
+            </div>
+          </li>
+          <li class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-date">06 / 2024</div>
+            <div class="tl-card">
+              <span class="tl-ico"><svg class="ico" aria-hidden="true"><use href="#i-briefcase"/></svg></span>
+              <h4 data-i18n="jny.3t">Werkstudent at Betriebs- und Service GmbH</h4>
+              <p data-i18n="jny.3p">13 months coordinating kitchen, service &amp; disposition for 200+ guests a day.</p>
+            </div>
+          </li>
+          <li class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-date">SS 2026</div>
+            <div class="tl-card">
+              <span class="tl-ico"><svg class="ico" aria-hidden="true"><use href="#i-refresh"/></svg></span>
+              <h4 data-i18n="jny.4t">6. Semester — Lean Management &amp; beyond</h4>
+              <p data-i18n="jny.4p">Deepening lean, KVP &amp; process visualisation alongside finance and applied mathematics.</p>
+            </div>
+          </li>
+          <li class="tl-item is-next reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-date" data-i18n="jny.5d">Next</div>
+            <div class="tl-card">
+              <span class="tl-ico"><svg class="ico" aria-hidden="true"><use href="#i-rocket"/></svg></span>
+              <h4 data-i18n="jny.5t">Pflichtpraktikum · WS 2026/27</h4>
+              <p data-i18n="jny.5p">Looking for a role in project management, operations, or production — München preferred.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div class="contact-orbits" aria-hidden="true">
+            <span class="orbit o1"></span>
+            <span class="orbit o2"></span>
+            <span class="orbit o3"></span>
+          </div>
+          <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
+          <h2 class="contact-title"><span data-i18n="contact.t1">Let's build something</span><br/><span data-i18n="contact.t2">worth documenting.</span></h2>
+          <p class="contact-sub" data-i18n="contact.sub">
+            Open to internship (Pflichtpraktikum) and working-student roles in
+            project management, operations, and production — in München and
+            remote across DE.
+          </p>
+          <div class="contact-actions">
+            <a class="btn btn-primary magnetic" href="mailto:tanishq114@gmail.com">
+              <svg class="ico ico-sm" aria-hidden="true"><use href="#i-mail"/></svg>
+              <span>tanishq114@gmail.com</span>
+            </a>
+            <a class="btn btn-ghost magnetic" href="tel:+4917688246493">
+              <svg class="ico ico-sm" aria-hidden="true"><use href="#i-phone"/></svg>
+              <span>+49 176 8824 6493</span>
+            </a>
+          </div>
+          <div class="contact-meta">
+            <div>
+              <span class="k"><svg class="ico ico-xs" aria-hidden="true"><use href="#i-pin"/></svg> <span data-i18n="contact.k1">Based in</span></span>
+              <span class="v">Planegger Str. 54, 81241 München</span>
+            </div>
+            <div>
+              <span class="k"><svg class="ico ico-xs" aria-hidden="true"><use href="#i-globe"/></svg> <span data-i18n="contact.k2">Languages</span></span>
+              <span class="v" data-i18n="contact.v2">DE B2 · EN C1 · HI native</span>
+            </div>
+            <div>
+              <span class="k"><svg class="ico ico-xs" aria-hidden="true"><use href="#i-cap"/></svg> <span data-i18n="contact.k3">Status</span></span>
+              <span class="v">B.Eng. · 6. Semester · THD</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div><span data-i18n="footer.copy">© <span id="year">2026</span> Tanishq Tanishq · Designed &amp; built with care.</span></div>
+        <div class="foot-links">
+          <a href="#top" class="magnetic" data-i18n="footer.top">Back to top ↑</a>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Libraries (GSAP + ScrollTrigger, Three.js, Lenis) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" defer></script>
+
+  <script src="script.js" defer></script>
+  <script src="enhance.js" defer></script>
+</body>
+</html>
