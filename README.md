@@ -13,7 +13,6 @@ request is the Google Fonts stylesheet.
 |--------------|---------|
 | `index.html` | The whole portfolio site |
 | `projects/` | Project screenshots (PNG, full-resolution) |
-| `.nojekyll` | Tells GitHub Pages to skip Jekyll processing |
 | `README.md` | This file |
 
 ## Features
@@ -29,22 +28,7 @@ request is the Google Fonts stylesheet.
 - Mobile navigation menu
 - Respects `prefers-reduced-motion`
 
-## Run locally
 
-Just open `index.html` in a browser, or serve the folder:
-
-```bash
-python3 -m http.server 8000
-# then visit http://localhost:8000
-```
-
-## Deploy on GitHub Pages
-
-1. Create a new repository and upload everything in this folder.
-2. In the repository: **Settings → Pages**.
-3. Under **Build and deployment**, set **Source** to *Deploy from a branch*,
-   pick the `main` branch and the `/ (root)` folder, then **Save**.
-4. The site goes live at `https://<your-username>.github.io/<repo-name>/`.
 
 ## Contact
 
